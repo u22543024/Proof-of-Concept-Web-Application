@@ -23,7 +23,7 @@ namespace u22543024_HW01_API.Controllers
             return await _context.Products.ToListAsync();
         }
 
-        
+        //Get the product details using the product id
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProductByID(int id) 
         {
@@ -37,7 +37,7 @@ namespace u22543024_HW01_API.Controllers
             return product;
         }
 
-      
+         // Edit/Update the product details
         [HttpPut("{id}")]
         public async Task<IActionResult> EditProduct(int id, Product product) 
         {
@@ -58,7 +58,7 @@ namespace u22543024_HW01_API.Controllers
             return NoContent();
         }
 
-        
+        // Add/Create a new prpduct details
         [HttpPost]
         public async Task<ActionResult<Product>> AddProduct(Product product)
         {
@@ -68,7 +68,7 @@ namespace u22543024_HW01_API.Controllers
             return CreatedAtAction(nameof(GetProductByID), new { id = product.ID }, product);
         }
 
-      
+         // Delete existing product details
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
