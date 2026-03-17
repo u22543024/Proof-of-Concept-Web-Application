@@ -16,7 +16,7 @@ namespace u22543024_HW01_API.Controllers
             _context = context;
         }
 
-       
+       // Get the list of products
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
