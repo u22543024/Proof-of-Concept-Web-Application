@@ -1,0 +1,21 @@
+<br>
+  <div class="container mt-4">
+    <h2 style="text-align: start;">Products</h2>
+    <br>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let product of products">
+        <div class="card h-100 d-flex flex-column">
+          <div class="card-body">
+            <h4 class="card-title">Name: {{ product.name }}</h4>
+            <p class="card-text"><strong>Price:</strong> R{{ product.price }}</p>
+            <p class="card-text"><strong>Description:</strong> {{ product.description }}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <button class="btn btn-primary edit-btn" [routerLink]="['/edit-product', product.id]">Edit</button>
+            <button class="btn btn-danger delete-btn" (click)="confirmDelete(product.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
